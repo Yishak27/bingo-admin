@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box, TextField, Button, Typography, Paper, Container, Alert } from '@mui/material';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -8,6 +9,7 @@ export default function Login() {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +24,7 @@ export default function Login() {
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
-        window.location.href = '/dashboard';
+        navigate('/dashboard');
       } else {
         setError('Login failed: No token received');
       }
