@@ -42,12 +42,18 @@ export default function Commissions() {
     return branchMatch && fromMatch && toMatch;
   });
 
+  // Calculate total commission for filtered results
+  const totalCommission = filtered.reduce((sum, c) => sum + (c.amount || 0), 0);
+
   return (
     <Box sx={{ p: { xs: 2, sm: 3 } }}>
       <Typography variant="h4" component="h1" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.125rem' }, mb: { xs: 2, sm: 3 } }}>
         Commissions
       </Typography>
       <Card sx={{ p: 2, boxShadow: 4, bgcolor: '#f9fafb', mb: 3 }}>
+        <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+          Total Commission: {totalCommission.toLocaleString()} Birr
+        </Typography>
         <Grid container spacing={2} alignItems="center" sx={{ mb: 2 }}>
           <Grid item xs={12} sm={4}>
             <TextField label="Filter by Branch" value={filter} onChange={e => setFilter(e.target.value)} fullWidth />
