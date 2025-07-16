@@ -3,7 +3,7 @@ import { Box, Typography, Table, TableHead, TableRow, TableCell, TableBody, Pape
 import DownloadIcon from '@mui/icons-material/Download';
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://cho-bingo-api.onrender.com/api';
 
 export default function Commissions() {
   const [filter, setFilter] = useState('');

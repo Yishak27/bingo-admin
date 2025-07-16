@@ -4,7 +4,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import ClearIcon from '@mui/icons-material/Clear';
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://cho-bingo-api.onrender.com/api';
 
 export default function Dashboard() {
   const [fromDate, setFromDate] = useState('');
