@@ -39,7 +39,7 @@ export default function Dashboard() {
 
   const statCards = [
     { label: 'Total Branches', value: stats.branches },
-    { label: 'Total Commissions', value: `${stats.commissions} Birr` },
+    { label: 'Total Commissions', value: `${stats.commissions.toFixed(2)} Birr` },
     { label: 'Total Games', value: stats.games },
     { label: 'Total Payouts', value: '-' }, // Placeholder for payouts
   ];
