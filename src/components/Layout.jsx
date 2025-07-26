@@ -12,6 +12,7 @@ const navItems = [
   { text: 'Branches', icon: <StoreIcon />, path: '/branches' },
   { text: 'Commissions', icon: <MonetizationOnIcon />, path: '/commissions' },
   { text: 'Users', icon: <PeopleIcon />, path: '/users' },
+  { text: 'Logout', icon: <PeopleIcon />, path: '/logout' },
 ];
 
 export default function Layout() {
